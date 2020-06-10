@@ -1,0 +1,169 @@
+\section{DOT Language}
+The following (Listing \ref{list:dot-parser}) is the parser grammar 
+defining the DOT language. First line indicates that these
+are parser rules. Line 5 causes to use the DOTLexer file that is shown
+in the Listing \ref{list:dot-lexer}. 
+Following Rules are typical indications that are in regular expression
+syntax. if you are not familiar with these rules you can click
+\href{https://en.wikipedia.org/wiki/Regular_expression#Syntax}{\textbf{here.}}
+Take note that, Terminals are shown in 
+upper-case font and nonterminals in lower-case.
+literal characters are given 
+in single quotes. Parentheses \textbf{(} and \textbf{)} indicate 
+grouping when needed. Question marks \textbf{?} 
+represent optional items. Vertical bars \textbf{|} 
+separate alternatives.
+
+\lstinputlisting[style=ANTLR,
+caption={Defining Parser for DOT Language in ANTLR},
+    label={list:dot-parser}]{../src/antlr/DOTParser.g4}
+
+Listing \ref{list:dot-lexer} defines the lexer rules. Fragmets 
+are reusable building blocks for lexer rules that are support
+case-insensatives keywords.
+The keywords \textbf{node, edge, graph, digraph, 
+subgraph,} and \textbf{strict} are case-independent. Note also that 
+the allowed compass point values are not keywords, so these 
+strings can be used elsewhere as ordinary identifiers and, 
+conversely, the parser will actually accept any identifier.
+a name is Any string of alphabetic 
+([a-zA-Z\textbackslash 200-\textbackslash 377]) characters, 
+underscores ('_') or digits ([0-9]), not beginning 
+with a digit or any double-quoted string ("...") possibly 
+containing escaped quotes (\textbackslash ") .An edgeop is -> in directed graphs 
+and -- in undirected graphs.
+The language supports C++-style 
+comments: /* */ and //. In addition, a line beginning 
+with a '\#' character is considered a line output from 
+a C preprocessor (e.g., \# 34 to indicate line 34 ) and discarded.
+Semicolons and commas aid readability but are not 
+required. Also, any amount of whitespace may be inserted 
+between terminals.
+\lstinputlisting[style=ANTLR,
+caption={Defining Lexer for DOT Language in ANTLR},
+    label={list:dot-lexer}]{../src/antlr/DOTLexer.g4}
+
+Figure \ref{fig:dot} shows an example of executing the 
+language using 
+\href{https://dot2tex.readthedocs.io/en/latest/}{\textbf{dot2tex}} 
+console program.
+
+\begin{figure}[H]
+  \centering
+\begin{tabular}{p{0.5\textwidth}p{0.3\textwidth}}
+\subfloat[]{\lstinputlisting[style=mystyle]{codes/dot.dt}}&
+
+\subfloat[]{\input{images/dot.tex}}
+\end{tabular}
+  
+  \caption{Example of executing DOT Language uisng dot2tex console program}
+  \label{fig:dot}
+\end{figure}
+
+\subsection{Subgraphs and Clusters}
+Subgraphs play two roles. First, a subgraph 
+can be used to represent graph structure, 
+indicating that certain nodes and edges should 
+be grouped together. This is the usual role for 
+subgraphs and typically specifies semantic 
+information about the graph components. It 
+can also provide a convenient shorthand for 
+edges. An edge statement allows a subgraph on 
+both the left and right sides of the edge operator. 
+When this occurs, an edge is created from every 
+node on the left to every node on the right. 
+For example, the specification
+\begin{lstlisting}[language=C, style=mystyle]
+  A -> {B C}
+\end{lstlisting}
+is equivalent to:
+\begin{lstlisting}[language=C, style=mystyle]
+  A -> B 
+  A -> C
+\end{lstlisting}
+In the second role, a subgraph can provide a 
+context for setting attributes. For example, a 
+subgraph could specify that blue is the default 
+color for all nodes defined in it. In the context 
+of graph drawing, a more interesting example is:
+\begin{lstlisting}[language=Java, style=mystyle]
+
+subgraph { 
+rank = same; A; B; C; 
+} 
+\end{lstlisting}
+This (anonymous) subgraph specifies that the nodes 
+A, B and C should all be placed on the same rank.
+
+\subsection{Lexical and Semantic Notes}
+A graph must be specified as either a digraph or a 
+graph. Semantically, this indicates whether or not 
+there is a natural direction from one of the edge's 
+nodes to the other. Lexically, a digraph must specify 
+an edge using the edge operator -> while a undirected 
+graph must use --. Operationally, the distinction 
+is used to define different default rendering 
+attributes. For example, edges in a digraph will 
+be drawn, by default, with an arrowhead pointing 
+to the head node. For ordinary graphs, edges are 
+drawn without any arrowheads by default.
+
+A graph may also be described as strict. This 
+forbids the creation of multi-edges, i.e., there 
+can be at most one edge with a given tail node and 
+head node in the directed case. For undirected 
+graphs, there can be at most one edge connected to 
+the same two nodes. Subsequent edge statements 
+using the same two nodes will identify the edge 
+with the previously defined one and apply any 
+attributes given in the edge statement. For 
+example, the graph
+\begin{lstlisting}[language=C, style=mystyle]
+strict graph { 
+  a -- b
+  a -- b
+  b -- a [color=blue]
+} 
+\end{lstlisting}
+will have a single edge connecting nodes a and b, 
+whose color is blue.
+
+If a default attribute is defined using a node, 
+edge, or graph statement, or by an attribute 
+assignment not attached to a node or edge, any 
+object of the appropriate type defined afterwards 
+will inherit this attribute value. This holds until 
+the default attribute is set to a new value, from 
+which point the new value is used. Objects defined 
+before a default attribute is set will have an 
+empty string value attached to the attribute once 
+the default attribute definition is made.
+
+Note, in particular, that a subgraph receives the 
+attribute settings of its parent graph at the time 
+of its definition. This can be useful; for example, 
+one can assign a font to the root graph and all 
+subgraphs will also use the font. For some 
+attributes, however, this property is undesirable. 
+If one attaches a label to the root graph, it is 
+probably not the desired effect to have the label 
+used by all subgraphs. Rather than listing the 
+graph attribute at the top of the graph, and the 
+resetting the attribute as needed in the subgraphs, 
+one can simply defer the attribute definition in 
+the graph until the appropriate subgraphs have been 
+defined.
+
+If an edge belongs to a cluster, its endpoints 
+belong to that cluster. Thus, where you put an 
+edge can effect a layout, as clusters are sometimes 
+laid out recursively.
+
+There are certain restrictions on subgraphs 
+and clusters. First, at present, the names of a 
+graph and it subgraphs share the same namespace. 
+Thus, each subgraph must have a unique name. 
+Second, although nodes can belong to any number 
+of subgraphs, it is assumed clusters form a strict 
+hierarchy when viewed as subsets of nodes and edges.
+

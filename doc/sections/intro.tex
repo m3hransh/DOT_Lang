@@ -1,0 +1,82 @@
+\section{Introduction}
+Domain Specific Languages are languages created to support
+a particular set of tasks, as they are performed in a 
+specific domain.Some DSLs are intended to be used by 
+programmers, and therefore are more technical, while 
+others are intended to be used by someone who is not 
+a programmer and therefore they use less geeky concepts 
+and syntax.
+
+\par
+Why using a specific, limited language instead of a 
+generic, powerful one?
+The short answer is that Domain Specific Languages 
+are limited in the things they can do, but because 
+of their specialization they can do much more in 
+their own limited domain.
+ 
+Domain Specific Languages are great because:
+\begin{enumerate}
+\item 
+They let you communicate with domain experts. 
+Do you write medical applications? Doctors do 
+not understand when you talk about arrays or 
+for-loops, but if you use a DSL that is about 
+patients, temperature measures and blood pressure they could understand it better than you do
+\item
+They let you focus on the important concepts. 
+They hide the implementation or the technical 
+details and expose just the information that really matters.
+\end{enumerate}
+
+In this Report we are going to implement DOT language. 
+DOT is a language that can describe graphs, either 
+directed or non directed.
+
+\subsection{What is ANTLR?}
+ANTLR is a parser generator, a tool that helps you to 
+create parsers
+What you need to do to get an AST:
+\begin{enumerate}
+\item 
+define a lexer and parser grammar
+\item
+invoke ANTLR: it will generate a lexer 
+and a parser in your target language 
+(e.g., Java, Python, C\#, Javascript)
+\item
+use the generated lexer and parser: you invoke 
+them passing the code to recognize and they 
+return to you an AST
+\end{enumerate}
+ANTLR is actually made up of two main parts: 
+the tool, used to generate the lexer 
+and parser, and the runtime, needed to run them.
+
+\subsection{Lexers and Parsers}
+A lexer takes the individual characters and 
+transforms them in tokens, the atoms that the 
+parser uses to create the logical structure.
+These are notes that are important to define lexers
+and parsers in ANTLR:
+
+\begin{itemize}
+    \item  lexer rules are all uppercase, while 
+    parser rules are all lowercase
+    \item  Rules are typically written in this 
+    order: first the parser rules and then the lexer ones
+    \item  lexer rules are analyzed in the order 
+    that they appear(identifier define first)
+    \item  The basic syntax of a rule is easy: 
+    there is a name, a colon, the definition 
+    of the rule and a terminating semicolon
+
+\end{itemize}
+
+In the Listing \ref{list:antlrex} an example of definition
+ of lexer and parser in ANTLR syntax is shown.
+This is not a complete grammar, but we can already 
+see that lexer rules are all uppercase, while 
+parser rules are all lowercase.
+\lstinputlisting[style=ANTLR,caption={Example of defining parser and lexer in ANTLR},
+    label={list:antlrex}]{codes/antlrex.txt}

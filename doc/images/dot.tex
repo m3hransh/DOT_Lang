@@ -1,0 +1,155 @@
+\begin{tikzpicture}[anchor=mid,>=latex',scale=.6,line join=bevel,]
+  \pgfsetlinewidth{1bp}
+%%
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{0.83,0.83,0.83};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{0.83,0.83,0.83};
+  \pgfsetfillcolor{fillcol}
+  \filldraw (8.0bp,71.0bp) -- (8.0bp,362.0bp) -- (105.0bp,362.0bp) -- (105.0bp,71.0bp) -- cycle;
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (56.5bp,350.5bp) node {process \#1};
+\end{scope}
+\begin{scope}
+  \pgfsetstrokecolor{black}
+  \definecolor{strokecol}{rgb}{0.0,0.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (115.0bp,71.0bp) -- (115.0bp,362.0bp) -- (212.0bp,362.0bp) -- (212.0bp,71.0bp) -- cycle;
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (163.5bp,350.5bp) node {process \#2};
+\end{scope}
+  \pgfsetcolor{black}
+  % Edge: a0 -> a1
+  \draw [->] (68.0bp,294.7bp) .. controls (68.0bp,286.98bp) and (68.0bp,277.71bp)  .. (68.0bp,259.1bp);
+  % Edge: a1 -> a2
+  \draw [->] (67.753bp,222.7bp) .. controls (67.643bp,214.98bp) and (67.51bp,205.71bp)  .. (67.244bp,187.1bp);
+  % Edge: a2 -> a3
+  \draw [->] (67.247bp,150.7bp) .. controls (67.357bp,142.98bp) and (67.49bp,133.71bp)  .. (67.756bp,115.1bp);
+  % Edge: a3 -> a0
+  \draw [->] (53.874bp,112.86bp) .. controls (45.438bp,122.81bp) and (35.512bp,136.66bp)  .. (31.0bp,151.0bp) .. controls (16.598bp,196.79bp) and (17.573bp,213.22bp)  .. (32.0bp,259.0bp) .. controls (35.36bp,269.66bp) and (41.63bp,280.12bp)  .. (54.317bp,297.05bp);
+  % Edge: b0 -> b1
+  \draw [->] (153.15bp,295.05bp) .. controls (154.58bp,287.35bp) and (156.31bp,278.03bp)  .. (159.79bp,259.28bp);
+  % Edge: b1 -> b2
+  \draw [->] (166.39bp,223.05bp) .. controls (167.93bp,215.35bp) and (169.79bp,206.03bp)  .. (173.54bp,187.28bp);
+  % Edge: b2 -> b3
+  \draw [->] (170.6bp,151.41bp) .. controls (167.49bp,143.34bp) and (163.67bp,133.43bp)  .. (156.54bp,114.96bp);
+  % Edge: a1 -> b3
+  \draw [->] (78.824bp,224.49bp) .. controls (85.957bp,214.05bp) and (95.357bp,199.9bp)  .. (103.0bp,187.0bp) .. controls (115.4bp,166.07bp) and (128.21bp,141.58bp)  .. (141.98bp,114.34bp);
+  % Edge: a3 -> end
+  \draw [->] (77.099bp,79.688bp) .. controls (81.64bp,71.547bp) and (87.276bp,61.445bp)  .. (97.427bp,43.246bp);
+  % Edge: b2 -> a3
+  \draw [->] (158.01bp,155.81bp) .. controls (140.66bp,144.67bp) and (114.81bp,128.06bp)  .. (86.769bp,110.05bp);
+  % Edge: b3 -> end
+  \draw [->] (140.9bp,79.688bp) .. controls (136.36bp,71.547bp) and (130.72bp,61.445bp)  .. (120.57bp,43.246bp);
+  % Edge: start -> a0
+  \draw [->] (101.09bp,372.92bp) .. controls (95.714bp,363.34bp) and (88.442bp,350.4bp)  .. (77.023bp,330.07bp);
+  % Edge: start -> b0
+  \draw [->] (116.91bp,372.92bp) .. controls (122.29bp,363.34bp) and (129.56bp,350.4bp)  .. (140.98bp,330.07bp);
+  % Node: a0
+\begin{scope}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+  \filldraw [opacity=1] (68.0bp,313.0bp) ellipse (27.0bp and 18.0bp);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (68.0bp,313.0bp) node {a0};
+\end{scope}
+  % Node: a1
+\begin{scope}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+  \filldraw [opacity=1] (68.0bp,241.0bp) ellipse (27.0bp and 18.0bp);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (68.0bp,241.0bp) node {a1};
+\end{scope}
+  % Node: a2
+\begin{scope}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+  \filldraw [opacity=1] (67.0bp,169.0bp) ellipse (27.0bp and 18.0bp);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (67.0bp,169.0bp) node {a2};
+\end{scope}
+  % Node: a3
+\begin{scope}
+  \definecolor{strokecol}{rgb}{1.0,1.0,1.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{1.0,1.0,1.0};
+  \pgfsetfillcolor{fillcol}
+  \filldraw [opacity=1] (68.0bp,97.0bp) ellipse (27.0bp and 18.0bp);
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (68.0bp,97.0bp) node {a3};
+\end{scope}
+  % Node: b0
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{0.83,0.83,0.83};
+  \pgfsetfillcolor{fillcol}
+  \filldraw [opacity=1] (150.0bp,313.0bp) ellipse (27.0bp and 18.0bp);
+  \draw (150.0bp,313.0bp) node {b0};
+\end{scope}
+  % Node: b1
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{0.83,0.83,0.83};
+  \pgfsetfillcolor{fillcol}
+  \filldraw [opacity=1] (163.0bp,241.0bp) ellipse (27.0bp and 18.0bp);
+  \draw (163.0bp,241.0bp) node {b1};
+\end{scope}
+  % Node: b2
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{0.83,0.83,0.83};
+  \pgfsetfillcolor{fillcol}
+  \filldraw [opacity=1] (177.0bp,169.0bp) ellipse (27.0bp and 18.0bp);
+  \draw (177.0bp,169.0bp) node {b2};
+\end{scope}
+  % Node: b3
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \definecolor{fillcol}{rgb}{0.83,0.83,0.83};
+  \pgfsetfillcolor{fillcol}
+  \filldraw [opacity=1] (150.0bp,97.0bp) ellipse (27.0bp and 18.0bp);
+  \draw (150.0bp,97.0bp) node {b3};
+\end{scope}
+  % Node: end
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (130.5bp,43.0bp) -- (87.5bp,43.0bp) -- (87.5bp,0.0bp) -- (130.5bp,0.0bp) -- cycle;
+  \draw (99.5bp,43.0bp) -- (87.5bp,31.0bp);
+  \draw (87.5bp,12.0bp) -- (99.5bp,0.0bp);
+  \draw (118.5bp,0.0bp) -- (130.5bp,12.0bp);
+  \draw (130.5bp,31.0bp) -- (118.5bp,43.0bp);
+  \draw (109.0bp,21.5bp) node {end};
+\end{scope}
+  % Node: start
+\begin{scope}
+  \definecolor{strokecol}{rgb}{0.0,0.0,0.0};
+  \pgfsetstrokecolor{strokecol}
+  \draw (109.0bp,406.0bp) -- (62.25bp,388.0bp) -- (109.0bp,370.0bp) -- (155.75bp,388.0bp) -- cycle;
+  \draw (73.44bp,392.31bp) -- (73.44bp,383.69bp);
+  \draw (97.8bp,374.31bp) -- (120.2bp,374.31bp);
+  \draw (144.56bp,383.69bp) -- (144.56bp,392.31bp);
+  \draw (120.2bp,401.69bp) -- (97.8bp,401.69bp);
+  \draw (109.0bp,388.0bp) node {start};
+\end{scope}
+%
+\end{tikzpicture}
+% End of code
