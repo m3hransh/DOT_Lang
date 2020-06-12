@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.12.6)  10 JUN 2020 15:02
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.12.6)  12 JUN 2020 15:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -442,7 +442,17 @@ File: tikzlibrarytopaths.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 File: tikzlibraryplotmarks.code.tex 2019/08/03 v3.1.4b (3.1.4b)
  (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2019/08/03 v3.1.4b (3.1.4b)
-))) (/usr/local/texlive/2019/texmf-dist/tex/latex/sectsty/sectsty.sty
+))) (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks34
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2019/texmf-dist/tex/latex/sectsty/sectsty.sty
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading styles
 
 
@@ -786,13 +796,13 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen282
 \Gm@layouthoffset=\dimen283
 \Gm@layoutvoffset=\dimen284
-\Gm@dimlist=\toks34
+\Gm@dimlist=\toks35
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count314
-\float@exts=\toks35
+\float@exts=\toks36
 \float@box=\box66
-\@float@everytoks=\toks36
+\@float@everytoks=\toks37
 \@floatcapt=\box67
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2019/11/16 v2.17d AMS math features
@@ -803,7 +813,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2000/06/29 v2.01 AMS text
  (/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks37
+\@emptytoks=\toks38
 \ex@=\dimen285
 )) (/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -831,24 +841,33 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \dotsspace@=\muskip17
 \c@parentequation=\count322
 \dspbrk@lvl=\count323
-\tag@help=\toks38
+\tag@help=\toks39
 \row@=\count324
 \column@=\count325
 \maxfields@=\count326
-\andhelp@=\toks39
+\andhelp@=\toks40
 \eqnshift@=\dimen288
 \alignsep@=\dimen289
 \tagshift@=\dimen290
 \tagwidth@=\dimen291
 \totwidth@=\dimen292
 \lineht@=\dimen293
-\@envbody=\toks40
+\@envbody=\toks41
 \multlinegap=\skip138
 \multlinetaggap=\skip139
-\mathdisplay@stack=\toks41
+\mathdisplay@stack=\toks42
 LaTeX Info: Redefining \[ on input line 2858.
 LaTeX Info: Redefining \] on input line 2859.
-) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysnakes.code.tex
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 105.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarysnakes.code.tex
 File: tikzlibrarysnakes.code.tex 2019/08/03 v3.1.4b (3.1.4b)
 
 
@@ -995,16 +1014,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--17
 
 File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
 <images/Bu_Ali_Sina_University.png>
-[1] (./main.toc)
+[1] (./main.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
 File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
 <images/Bu_Ali_Sina_University.png>
- [2] (./sections/intro.tex (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+ [2] (./sections/intro.tex
+LaTeX Font Info:    Trying to load font information for OMS+lmr on input line 64.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 64.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 64.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 82.
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) (./codes/antlrex.txt)) (./sections/sec1.tex
 File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
 <images/Bu_Ali_Sina_University.png>
@@ -1050,26 +1092,51 @@ File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
  [4]) (./sections/sec2.tex
 File: images/parse-tree.png Graphic file (type bmp)
 <images/parse-tree.png>
+) (./sections/sec3.tex
+File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
+<images/Bu_Ali_Sina_University.png>
+ [5] (../build.gradle) (/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+) (./codes/main1.py
+File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
+<images/Bu_Ali_Sina_University.png>
+ [6])
+File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
+<images/Bu_Ali_Sina_University.png>
+ [7] (./codes/Listener1.py
+File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
+<images/Bu_Ali_Sina_University.png>
+ [8]
+File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
+<images/Bu_Ali_Sina_University.png>
+ [9]) (./codes/input1.txt)
+File: images/Figure_1.png Graphic file (type bmp)
+<images/Figure_1.png>
+
+Overfull \hbox (91.04744pt too wide) in paragraph at lines 190--191
+[][]| 
+ []
+
 )
 File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
 <images/Bu_Ali_Sina_University.png>
- [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 26.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 26.
+ [10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 27.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 27.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 26.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 26.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 27.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 27.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A8D8C26FCD7BE3DFDA0C79A45ED5961C;494.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 26.
+(rerunfilecheck)             Checksum: 895E639E027F9924E108DD6B3BEFBDDE;847.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 27.
  ) 
 Here is how much of TeX's memory you used:
- 46696 strings out of 492480
- 1034216 string characters out of 6129412
- 1608376 words of memory out of 5000000
- 50529 multiletter control sequences out of 15000+600000
- 533288 words of font info for 44 fonts, out of 8000000 for 9000
+ 47848 strings out of 492480
+ 1047791 string characters out of 6129412
+ 1792571 words of memory out of 5000000
+ 51637 multiletter control sequences out of 15000+600000
+ 585220 words of font info for 53 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 81i,19n,131p,986b,1905s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 81i,20n,131p,986b,2006s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.xdv (8 pages, 244292 bytes).
+Output written on main.xdv (13 pages, 292672 bytes).

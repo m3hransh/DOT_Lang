@@ -6,3 +6,7 @@
 \contentsline {subsection}{\numberline {2.1}Subgraphs and Clusters}{4}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Lexical and Semantic Notes}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Implementaion of Lexer and Parser}{5}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Implementing in Python}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Generate lexer and parser in Python}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Setting up a Simple DOT Intepreter}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Setting up the Listener}{7}{subsubsection.3.2.1}%

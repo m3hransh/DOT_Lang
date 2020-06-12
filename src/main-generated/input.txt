@@ -1,0 +1,9 @@
+digraph g1{
+    a -> b -> c [color=red, weight=2];
+    a [color=purple]
+    c->a[color=blue, weight=2]
+    node [color = red]
+    e;
+    edge[weight=2]
+    c -- e;    
+}

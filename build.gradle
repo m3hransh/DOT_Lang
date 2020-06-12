@@ -9,7 +9,7 @@ repositories {
     jcenter()
 }
 dependencies {
-    runtime 'org.antlr:antlr4:4.7.2'
+    runtime 'org.antlr:antlr4:4.8'
 }
 
 task generateLexer(type:JavaExec) {
@@ -20,7 +20,7 @@ task generateLexer(type:JavaExec) {
   outputs.file("$GEN_SRC/${lexerName}.tokens")
   main = 'org.antlr.v4.Tool'
   classpath = sourceSets.main.runtimeClasspath
-  args = ['-Dlanguage=Python3', "${lexerName}.g4", '-o', '../../main-generated']
+  args = ['-Dlanguage=Python3', "${lexerName}.g4", '-o', '../main-generated']
   workingDir = ANTLR_SRC   
 }
 task generateParser(type:JavaExec) {
@@ -34,6 +34,6 @@ task generateParser(type:JavaExec) {
   outputs.file("$GEN_SRC/${parserName}.tokens")
   main = 'org.antlr.v4.Tool'
   classpath = sourceSets.main.runtimeClasspath
-  args = ['-Dlanguage=Python3', "${parserName}.g4", '-o', '../../main-generated']
+  args = ['-Dlanguage=Python3', "${parserName}.g4", '-o', '../main-generated']
   workingDir = ANTLR_SRC
 }

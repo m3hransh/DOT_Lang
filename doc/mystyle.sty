@@ -8,6 +8,7 @@
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage{fancyhdr}
 \RequirePackage{pgfplots}
+\RequirePackage{amssymb}
 \RequirePackage{sectsty}
 \RequirePackage{mdframed}
 \RequirePackage{syntax}
@@ -17,6 +18,7 @@
 \RequirePackage{graphicx}
 \RequirePackage{float}
 \RequirePackage{amsmath}
+\RequirePackage[T1]{fontenc}
 \RequirePackage[font=small]{caption}
 
 \usetikzlibrary{snakes, arrows, shapes} 
@@ -139,7 +141,8 @@ style=mystyle,
 language=Python,
 numbers=left,
 otherkeywords={self},             % Add keywords here
-emph={MyClass,__init__,add,ignore,build,LexerGenerator,np, plt},          % Custom highlighting
+emph={MyClass,__init__,add,ignore,build,LexerGenerator,np, plt,
+nx,DOTLexer,DOTParser, antlr4,GraphDOTListener,networkx,matplotlib,pyplot,sys},          % Custom highlighting
 emphstyle=\ttfamily\color{deepblue},    % Custom highlighting style
 }}
 

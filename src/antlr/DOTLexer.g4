@@ -19,6 +19,7 @@ fragment P          : ('P'| 'p');
 fragment D          : ('D'| 'd');
 fragment N          : ('N'| 'n');
 fragment E          : ('E'| 'e');
+fragment DIGIT      : [0-9];
 
 CUR_L: '{';
 CUR_R:'}';
@@ -40,5 +41,6 @@ COMMENT     : '/*' .*? '*/' -> skip ;
 LINE_COMMENT: '//' .*? '\r'? '\n' -> skip ;
 STRING      : '"' ( '\\"' | . )*? '"' ;
 ID          : [_a-zA-Z\u0080-\u00FF][a-zA-Z\u0080-\u00FF_0-9]* ;
+NUMBER      : '-'? ( '.' DIGIT+ | DIGIT+ ( '.' DIGIT* )? );
 PREPROC     : '#' ~[\r\n]* -> skip ;
 WS          : [ \t\n\r]+ -> skip ;

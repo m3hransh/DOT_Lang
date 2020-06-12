@@ -13,8 +13,6 @@ def main(file_name):
     parser = DOTParser(stream)
     tree = parser.graph()
 
-    
-
     GraphDOT = GraphDOTListener()
     walker = antlr4.ParseTreeWalker()
     walker.walk(GraphDOT, tree)

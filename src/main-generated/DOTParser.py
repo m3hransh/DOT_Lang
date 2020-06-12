@@ -1,14 +1,17 @@
-# Generated from DOTParser.g4 by ANTLR 4.7.2
+# Generated from DOTParser.g4 by ANTLR 4.8
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
-from typing.io import TextIO
 import sys
+if sys.version_info[1] > 5:
+	from typing import TextIO
+else:
+	from typing.io import TextIO
 
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\27")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\30")
         buf.write("x\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
         buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\4\16\t")
         buf.write("\16\3\2\5\2\36\n\2\3\2\3\2\5\2\"\n\2\3\2\3\2\3\2\3\2\3")
@@ -20,7 +23,7 @@ def serializedATN():
         buf.write("\3\13\3\13\5\13j\n\13\3\f\3\f\5\fn\n\f\3\r\3\r\3\r\3\r")
         buf.write("\5\rt\n\r\3\16\3\16\3\16\2\2\17\2\4\6\b\n\f\16\20\22\24")
         buf.write("\26\30\32\2\6\4\2\13\13\r\r\4\2\13\13\16\17\4\2\5\5\t")
-        buf.write("\t\3\2\24\25\2\177\2\35\3\2\2\2\4-\3\2\2\2\6\67\3\2\2")
+        buf.write("\t\3\2\24\26\2\177\2\35\3\2\2\2\4-\3\2\2\2\6\67\3\2\2")
         buf.write("\2\b=\3\2\2\2\nC\3\2\2\2\fF\3\2\2\2\16N\3\2\2\2\20Y\3")
         buf.write("\2\2\2\22_\3\2\2\2\24g\3\2\2\2\26k\3\2\2\2\30o\3\2\2\2")
         buf.write("\32u\3\2\2\2\34\36\7\f\2\2\35\34\3\2\2\2\35\36\3\2\2\2")
@@ -66,7 +69,7 @@ class DOTParser ( Parser ):
     symbolicNames = [ "<INVALID>", "CUR_L", "CUR_R", "SEM", "EQ", "BR_L", 
                       "BR_R", "COMMA", "COLON", "GRAPH", "STRICT", "DIGRAPH", 
                       "NODE", "EDGE", "SUBGRAPH", "EDGEOP", "COMMENT", "LINE_COMMENT", 
-                      "STRING", "ID", "PREPROC", "WS" ]
+                      "STRING", "ID", "NUMBER", "PREPROC", "WS" ]
 
     RULE_graph = 0
     RULE_stmt_list = 1
@@ -106,12 +109,13 @@ class DOTParser ( Parser ):
     LINE_COMMENT=17
     STRING=18
     ID=19
-    PREPROC=20
-    WS=21
+    NUMBER=20
+    PREPROC=21
+    WS=22
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.7.2")
+        self.checkVersion("4.8")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -186,7 +190,7 @@ class DOTParser ( Parser ):
             self.state = 31
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==DOTParser.STRING or _la==DOTParser.ID:
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DOTParser.STRING) | (1 << DOTParser.ID) | (1 << DOTParser.NUMBER))) != 0):
                 self.state = 30
                 self.name()
 
@@ -247,7 +251,7 @@ class DOTParser ( Parser ):
             self.state = 43
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DOTParser.CUR_L) | (1 << DOTParser.GRAPH) | (1 << DOTParser.NODE) | (1 << DOTParser.EDGE) | (1 << DOTParser.SUBGRAPH) | (1 << DOTParser.STRING) | (1 << DOTParser.ID))) != 0):
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DOTParser.CUR_L) | (1 << DOTParser.GRAPH) | (1 << DOTParser.NODE) | (1 << DOTParser.EDGE) | (1 << DOTParser.SUBGRAPH) | (1 << DOTParser.STRING) | (1 << DOTParser.ID) | (1 << DOTParser.NUMBER))) != 0):
                 self.state = 37
                 self.stmt()
                 self.state = 39
@@ -418,7 +422,7 @@ class DOTParser ( Parser ):
                 self.state = 57
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if _la==DOTParser.STRING or _la==DOTParser.ID:
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DOTParser.STRING) | (1 << DOTParser.ID) | (1 << DOTParser.NUMBER))) != 0):
                     self.state = 56
                     self.name()
 
@@ -544,7 +548,7 @@ class DOTParser ( Parser ):
             self.state = 70
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==DOTParser.STRING or _la==DOTParser.ID:
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DOTParser.STRING) | (1 << DOTParser.ID) | (1 << DOTParser.NUMBER))) != 0):
                 self.state = 69
                 self.a_list()
 
@@ -637,7 +641,7 @@ class DOTParser ( Parser ):
             self.state = 83
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la==DOTParser.STRING or _la==DOTParser.ID:
+            if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DOTParser.STRING) | (1 << DOTParser.ID) | (1 << DOTParser.NUMBER))) != 0):
                 self.state = 82
                 self.a_list()
 
@@ -697,7 +701,7 @@ class DOTParser ( Parser ):
             self.state = 87
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [DOTParser.STRING, DOTParser.ID]:
+            if token in [DOTParser.STRING, DOTParser.ID, DOTParser.NUMBER]:
                 self.state = 85
                 self.node_name()
                 pass
@@ -774,7 +778,7 @@ class DOTParser ( Parser ):
             self.state = 96
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [DOTParser.STRING, DOTParser.ID]:
+            if token in [DOTParser.STRING, DOTParser.ID, DOTParser.NUMBER]:
                 self.state = 94
                 self.node_name()
                 pass
@@ -985,6 +989,9 @@ class DOTParser ( Parser ):
         def STRING(self):
             return self.getToken(DOTParser.STRING, 0)
 
+        def NUMBER(self):
+            return self.getToken(DOTParser.NUMBER, 0)
+
         def getRuleIndex(self):
             return DOTParser.RULE_name
 
@@ -1008,7 +1015,7 @@ class DOTParser ( Parser ):
             self.enterOuterAlt(localctx, 1)
             self.state = 115
             _la = self._input.LA(1)
-            if not(_la==DOTParser.STRING or _la==DOTParser.ID):
+            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DOTParser.STRING) | (1 << DOTParser.ID) | (1 << DOTParser.NUMBER))) != 0)):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)

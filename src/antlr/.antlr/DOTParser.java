@@ -1,4 +1,4 @@
-// Generated from /home/mehran/Projects/compiler_lab/src/main/antlr/DOTParser.g4 by ANTLR 4.7.1
+// Generated from /home/mehran/Projects/compiler_lab/src/antlr/DOTParser.g4 by ANTLR 4.7.1
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -18,7 +18,7 @@ public class DOTParser extends Parser {
 	public static final int
 		CUR_L=1, CUR_R=2, SEM=3, EQ=4, BR_L=5, BR_R=6, COMMA=7, COLON=8, GRAPH=9, 
 		STRICT=10, DIGRAPH=11, NODE=12, EDGE=13, SUBGRAPH=14, EDGEOP=15, COMMENT=16, 
-		LINE_COMMENT=17, STRING=18, ID=19, PREPROC=20, WS=21;
+		LINE_COMMENT=17, STRING=18, ID=19, NUMBER=20, PREPROC=21, WS=22;
 	public static final int
 		RULE_graph = 0, RULE_stmt_list = 1, RULE_stmt = 2, RULE_subgraph = 3, 
 		RULE_attr_stmt = 4, RULE_attr_list = 5, RULE_a_list = 6, RULE_edge_stmt = 7, 
@@ -35,7 +35,7 @@ public class DOTParser extends Parser {
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, "CUR_L", "CUR_R", "SEM", "EQ", "BR_L", "BR_R", "COMMA", "COLON", 
 		"GRAPH", "STRICT", "DIGRAPH", "NODE", "EDGE", "SUBGRAPH", "EDGEOP", "COMMENT", 
-		"LINE_COMMENT", "STRING", "ID", "PREPROC", "WS"
+		"LINE_COMMENT", "STRING", "ID", "NUMBER", "PREPROC", "WS"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -132,7 +132,7 @@ public class DOTParser extends Parser {
 			setState(31);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==STRING || _la==ID) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << ID) | (1L << NUMBER))) != 0)) {
 				{
 				setState(30);
 				name();
@@ -181,7 +181,7 @@ public class DOTParser extends Parser {
 			setState(43);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CUR_L) | (1L << GRAPH) | (1L << NODE) | (1L << EDGE) | (1L << SUBGRAPH) | (1L << STRING) | (1L << ID))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << CUR_L) | (1L << GRAPH) | (1L << NODE) | (1L << EDGE) | (1L << SUBGRAPH) | (1L << STRING) | (1L << ID) | (1L << NUMBER))) != 0)) {
 				{
 				setState(37);
 				stmt();
@@ -326,7 +326,7 @@ public class DOTParser extends Parser {
 				setState(57);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				if (_la==STRING || _la==ID) {
+				if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << ID) | (1L << NUMBER))) != 0)) {
 					{
 					setState(56);
 					name();
@@ -425,7 +425,7 @@ public class DOTParser extends Parser {
 			setState(70);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==STRING || _la==ID) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << ID) | (1L << NUMBER))) != 0)) {
 				{
 				setState(69);
 				a_list();
@@ -507,7 +507,7 @@ public class DOTParser extends Parser {
 			setState(83);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			if (_la==STRING || _la==ID) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << ID) | (1L << NUMBER))) != 0)) {
 				{
 				setState(82);
 				a_list();
@@ -558,6 +558,7 @@ public class DOTParser extends Parser {
 			switch (_input.LA(1)) {
 			case STRING:
 			case ID:
+			case NUMBER:
 				{
 				setState(85);
 				node_name();
@@ -629,6 +630,7 @@ public class DOTParser extends Parser {
 			switch (_input.LA(1)) {
 			case STRING:
 			case ID:
+			case NUMBER:
 				{
 				setState(94);
 				node_name();
@@ -809,6 +811,7 @@ public class DOTParser extends Parser {
 	public static class NameContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(DOTParser.ID, 0); }
 		public TerminalNode STRING() { return getToken(DOTParser.STRING, 0); }
+		public TerminalNode NUMBER() { return getToken(DOTParser.NUMBER, 0); }
 		public NameContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -824,7 +827,7 @@ public class DOTParser extends Parser {
 			{
 			setState(115);
 			_la = _input.LA(1);
-			if ( !(_la==STRING || _la==ID) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << ID) | (1L << NUMBER))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -846,7 +849,7 @@ public class DOTParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\27x\4\2\t\2\4\3\t"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\30x\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
 		"\f\t\f\4\r\t\r\4\16\t\16\3\2\5\2\36\n\2\3\2\3\2\5\2\"\n\2\3\2\3\2\3\2"+
 		"\3\2\3\3\3\3\5\3*\n\3\3\3\3\3\5\3.\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4"+
@@ -855,7 +858,7 @@ public class DOTParser extends Parser {
 		"\3\t\5\tZ\n\t\3\t\3\t\5\t^\n\t\3\n\3\n\3\n\5\nc\n\n\3\n\5\nf\n\n\3\13"+
 		"\3\13\5\13j\n\13\3\f\3\f\5\fn\n\f\3\r\3\r\3\r\3\r\5\rt\n\r\3\16\3\16\3"+
 		"\16\2\2\17\2\4\6\b\n\f\16\20\22\24\26\30\32\2\6\4\2\13\13\r\r\4\2\13\13"+
-		"\16\17\4\2\5\5\t\t\3\2\24\25\2\177\2\35\3\2\2\2\4-\3\2\2\2\6\67\3\2\2"+
+		"\16\17\4\2\5\5\t\t\3\2\24\26\2\177\2\35\3\2\2\2\4-\3\2\2\2\6\67\3\2\2"+
 		"\2\b=\3\2\2\2\nC\3\2\2\2\fF\3\2\2\2\16N\3\2\2\2\20Y\3\2\2\2\22_\3\2\2"+
 		"\2\24g\3\2\2\2\26k\3\2\2\2\30o\3\2\2\2\32u\3\2\2\2\34\36\7\f\2\2\35\34"+
 		"\3\2\2\2\35\36\3\2\2\2\36\37\3\2\2\2\37!\t\2\2\2 \"\5\32\16\2! \3\2\2"+

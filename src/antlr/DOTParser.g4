@@ -29,5 +29,5 @@ node_name     : name port? ;
 
 port        : ':' name ( ':' name )? ;
 
-name          : (ID|STRING) ;
+name          : (ID| STRING| NUMBER) ;
 

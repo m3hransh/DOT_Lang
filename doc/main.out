@@ -5,3 +5,7 @@
 \BOOKMARK [2][-]{subsection.2.1}{Subgraphs\040and\040Clusters}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.2}{Lexical\040and\040Semantic\040Notes}{section.2}% 6
 \BOOKMARK [2][-]{subsection.2.3}{Implementaion\040of\040Lexer\040and\040Parser}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Implementing\040in\040Python}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Generate\040lexer\040and\040parser\040in\040Python}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.2}{Setting\040up\040a\040Simple\040DOT\040Intepreter}{section.3}% 10
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Setting\040up\040the\040Listener}{subsection.3.2}% 11
