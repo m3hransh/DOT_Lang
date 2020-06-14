@@ -10,3 +10,4 @@
 \contentsline {subsection}{\numberline {3.1}Generate lexer and parser in Python}{6}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Setting up a Simple DOT Intepreter}{6}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Setting up the Listener}{7}{subsubsection.3.2.1}%
+\contentsline {section}{\numberline {4}Implementing a web application for DOT}{10}{section.4}%

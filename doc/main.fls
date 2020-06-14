@@ -481,6 +481,13 @@ INPUT codes/input1.txt
 INPUT codes/input1.txt
 INPUT codes/input1.txt
 INPUT images/Figure_1.png
+INPUT sections/sec4.tex
+INPUT sections/sec4.tex
+INPUT images/dash-app.png
+INPUT images/Bu_Ali_Sina_University.png
+INPUT ../src/main-generated/DOTErrorListener.py
+INPUT ../src/main-generated/DOTErrorListener.py
+INPUT ../src/main-generated/DOTErrorListener.py
 INPUT images/Bu_Ali_Sina_University.png
 INPUT main.aux
 INPUT ./main.out

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.12.6)  12 JUN 2020 15:24
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019) (preloaded format=xelatex 2019.12.6)  14 JUN 2020 13:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1117,26 +1117,36 @@ Overfull \hbox (91.04744pt too wide) in paragraph at lines 190--191
 [][]| 
  []
 
+) (./sections/sec4.tex
+File: images/dash-app.png Graphic file (type bmp)
+<images/dash-app.png>
+File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
+<images/Bu_Ali_Sina_University.png>
+ [10] (../src/main-generated/DOTErrorListener.py)
+Underfull \hbox (badness 10000) in paragraph at lines 26--28
+
+ []
+
 )
 File: images/Bu_Ali_Sina_University.png Graphic file (type bmp)
 <images/Bu_Ali_Sina_University.png>
- [10]
+ [11]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 27.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 27.
  (./main.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 27.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 27.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 895E639E027F9924E108DD6B3BEFBDDE;847.
+(rerunfilecheck)             Checksum: 3832867C2E6F9D1187D81C88CCAF20CF;936.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 27.
  ) 
 Here is how much of TeX's memory you used:
- 47848 strings out of 492480
- 1047791 string characters out of 6129412
- 1792571 words of memory out of 5000000
- 51637 multiletter control sequences out of 15000+600000
+ 47936 strings out of 492480
+ 1049232 string characters out of 6129412
+ 1792631 words of memory out of 5000000
+ 51718 multiletter control sequences out of 15000+600000
  585220 words of font info for 53 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  81i,20n,131p,986b,2006s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.xdv (13 pages, 292672 bytes).
+Output written on main.xdv (14 pages, 314496 bytes).

@@ -1,5 +1,5 @@
 # DOT Implementation with ANTLR
-In this Project we are going to implement DOT language using ANTLR. 
+In this Project a simple version of the DOT language is implemented using ANTLR. 
 ### What is DOT?
 DOT is a DSL(domain specific language) that can describe graphs, either directed or non directed. This is example of DOT executed with dot2tex(a console program).
 ![Alt text](doc/images/dot_ex_readme.png)
@@ -40,6 +40,19 @@ be generated. To make things more faster and cleaner for running the command to 
 ```
 This causes generation of lexer and parser file in python and a listener template file is called [DOTParserListener.py](src/main-generated/DOTParserListener.py). We override its function in another file called [GraphDOTListener.py](src/main-genrated/GraphDOTListener.py) rather than changing its code directly. This is a simple Listener that support some features of the DOT Language. It uses a python package is called **networkx** for representing and manipulating the graph. There is a simple method in the GraphDOTListener class that uses matplotlib to show the graph using with use of netwrokx draw function.
 
-[main.py](src/main-generated/main.py) is simple programm that get input file from the system input and use the listener to show the result. This is simple input and its respected output.
+[main.py](src/main-generated/main.py) is a simple programm that gets input file from the system input and uses the listener to show the result. This is a simple input and its output.
 
 ![runing the main file](doc/images/listener_readme.png)
+
+## Phase #3(Web application)
+In this Phase, a simple web application is implemented with the use of [Dash](https://dash.plotly.com/).
+To run the app first install the required packages using following command:
+```
+pip install -r requirements.txt
+```
+Then run the [src/main-generated/web-app.py](src/main-generated/web-app.py) using following command:
+```
+python src/main-generated/web-app.py
+```
+Then open the following url is shown in the terminal. this is how the application work-->
+![dash-app](doc/images/dash.gif)

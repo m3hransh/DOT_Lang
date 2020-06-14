@@ -1,3 +1,5 @@
+# This is simple program for getting DOT program 
+# file from terminal and show its representation using matplotlib.pyplot
 import sys
 import antlr4
 from DOTLexer import DOTLexer
@@ -12,8 +14,6 @@ def main(file_name):
     stream = antlr4.CommonTokenStream(lexer)
     parser = DOTParser(stream)
     tree = parser.graph()
-
-    
 
     GraphDOT = GraphDOTListener()
     walker = antlr4.ParseTreeWalker()

@@ -7,3 +7,9 @@ digraph g1{
     edge[weight=2]
     c -- e;    
 }
+graph g{
+    a->b [color=red];
+    c->b [color=purple]
+    a [color = cyan]
+    a--f [weigh=2]
+}

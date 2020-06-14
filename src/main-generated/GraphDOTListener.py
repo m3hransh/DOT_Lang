@@ -4,7 +4,7 @@ from DOTParser import DOTParser
 from DOTParserListener import DOTParserListener
 import networkx as nx
 import matplotlib.pyplot as plt
-
+import plotly.graph_objects as go
 
 class GraphDOTListener(DOTParserListener):
     def __init__(self):
@@ -18,7 +18,8 @@ class GraphDOTListener(DOTParserListener):
         elif ctx.DIGRAPH() is not None:
             self.g = nx.DiGraph()
         # label property specify the name of the graph
-        self.g.graph['label'] = ctx.name().getText()
+        if ctx.name() is not None:
+            self.g.graph['label'] = ctx.name().getText()
 
 
     def exitEdge_stmt(self, ctx:DOTParser.Edge_stmtContext):
@@ -97,3 +98,72 @@ class GraphDOTListener(DOTParserListener):
         nx.draw_networkx_edge_labels(self.g,pos,edge_labels= weights)
         plt.title(label = self.g.graph['label'])
         plt.show()
+
+    def show(self):
+        '''Return plotty Figure for dash graph component'''
+        G = self.g
+        traceRecode = []  # contains edge_trace, node_trace, middle_node_trace
+        ############################################################################################################################################################
+        # create proper postion for nodes 
+        pos = nx.drawing.layout.spring_layout(G)
+        for node in G.nodes:
+            # store them in pos att
+            G.nodes[node]['pos'] = list(pos[node])
+
+        index = 0
+        for edge in G.edges:
+            x0, y0 = G.nodes[edge[0]]['pos']
+            x1, y1 = G.nodes[edge[1]]['pos']
+            # if the weight att doesn't exist it gives it weight of 1
+            weight = float(G.edges[edge]['weight']) if G.edges[edge].get('weight') else 1
+            color =  G.edges[edge]['color'] if G.edges[edge].get('color') else 'gray'
+            trace = go.Scatter(x=tuple([x0, x1, None]), y=tuple([y0, y1, None]),
+                               mode='lines',
+                               line={'width': weight},
+                               marker=dict(color=color),
+                               line_shape='spline',
+                               opacity=1)
+            traceRecode.append(trace)
+        ###############################################################################################################################################################
+        node_trace = go.Scatter(x=[], y=[], hovertext=[], text=[], mode='markers+text', textposition="bottom center",
+                                hoverinfo="text", marker={'size': 50, 'color': []})
+
+        index = 0
+        for node in G.nodes():
+            x, y = G.nodes[node]['pos']
+            hovertext = str(G.nodes[node])
+            text = node
+            node_trace['x'] += tuple([x])
+            node_trace['y'] += tuple([y])
+            node_trace['hovertext'] += tuple([hovertext])
+            node_trace['text'] += tuple([text])
+            node_trace['marker']['color'] += tuple([G.nodes[node]['color'] if G.nodes[node].get('color') else 'gray'])
+            
+
+        traceRecode.append(node_trace)
+
+        fig = go.Figure(data=traceRecode,
+             layout=go.Layout(
+                plot_bgcolor= "#111111",
+                paper_bgcolor= '#111111',
+                titlefont_size=16,
+                showlegend=False,
+                hovermode='closest',
+                margin=dict(b=20,l=5,r=5,t=40),
+                annotations=[ dict(
+                    text= G[edge[0]][edge[1]]['weight'] if G[edge[0]][edge[1]].get('weight') else '',
+                    ax=(G.nodes[edge[0]]['pos'][0] + G.nodes[edge[1]]['pos'][0]) / 2,
+                                    ay=(G.nodes[edge[0]]['pos'][1] + G.nodes[edge[1]]['pos'][1]) / 2, axref='x', ayref='y',
+                                    x=(G.nodes[edge[1]]['pos'][0]*3  + G.nodes[edge[0]]['pos'][0]) / 4,
+                                    y=(G.nodes[edge[1]]['pos'][1]*3  + G.nodes[edge[0]]['pos'][1]) / 4, xref='x', yref='y',
+                    showarrow=True if nx.is_directed(G) else False,
+                    arrowhead=3,
+                    arrowsize=4,
+                    arrowwidth=1,
+                    
+                     ) for edge in G.edges],
+                     font=dict(color='#7FDBFF'),
+                xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
+                yaxis=dict(showgrid=False, zeroline=False, showticklabels=False))
+                )
+        return fig
