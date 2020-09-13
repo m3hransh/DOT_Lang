@@ -1,5 +1,5 @@
 # DOT Implementation with ANTLR
-**This project is a Compiler Lab (Winter 2020) Project of [Computer Engineering Bu-Ali Sina University](http://eng.basu.ac.ir/en/ce)**
+**This project is a Compiler Lab (Winter 2020) Project of [Bachelor's Degree of Computer Engineering, Bu-Ali Sina University](http://eng.basu.ac.ir/en/ce)**
 In this Project, a simple version of the DOT language is implemented using ANTLR.  
 ### What is DOT?
 DOT is a DSL(domain-specific language) that can describe graphs, either directed or non directed. This is an example of DOT executed with dot2tex(a console program).
@@ -39,7 +39,7 @@ be generated. To make things faster and cleaner for running the command to gener
 ```
 ./gradlew generateparser
 ```
-This command generates a lexer and parser file in python, and a listener template file is called [DOTParserListener.py](src/main-generated/DOTParserListener.py). We override its function in another file called [GraphDOTListener.py](src/main-genrated/GraphDOTListener.py) rather than changing its code directly. This is a simple Listener that supports some features of the DOT Language. It uses a python package is called **Networkx** for representing and manipulating the graph. There is a simple method in the GraphDOTListener class that uses Matplotlib to show the graph using with use of Netwrokx draw function.
+This command generates a lexer and parser file in python, and a listener template file is called [DOTParserListener.py](src/main-generated/DOTParserListener.py). We override its function in another file called [GraphDOTListener.py](src/main-genrated/GraphDOTListener.py) rather than changing its code directly. This is a simple Listener that supports some features of the DOT Language. It uses a python package is called **Networkx** for representing and manipulating the graph. There is a simple method in the GraphDOTListener class that uses Matplotlib to show the graph with the use of Netwrokx draw function.
 
 [main.py](src/main-generated/main.py) is a simple programm that gets input file from the system input and uses the listener to show the result. This is a simple input and its output.
 
